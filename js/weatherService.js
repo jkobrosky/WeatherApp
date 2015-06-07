@@ -29,8 +29,8 @@ app.service('weatherService', function($http, $q) {
 			case 'Chance of a Thunderstorm':
 				return 'wi-day-storm-showers';
 				break;
-			case 'thunderstorms':
-				return 'wi-thunderstorms';
+			case 'Thunderstorm':
+				return 'wi-day-thunderstorm';
 				break;
 			default:
 				return 'wi-alien';

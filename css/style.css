@@ -76,7 +76,6 @@ a {
 	font-size: 1.5em;
 	display: flex;
 	justify-content: center;
-	margin-top: 20px;
 }
 
 .weather {
@@ -89,6 +88,10 @@ a {
 	display: flex;
 	margin-top: 10px;
 	justify-content: center;
+}
+
+.weather-display .wi {
+	font-size: 7em;
 }
 
 .forecast-container {
@@ -113,6 +116,10 @@ a {
 	margin: 5px 10px;
 }
 
+.forecastIcon {
+	color: rgba(255, 255, 255, 0.75);
+}
+
 .forecastTemps {
 	display: flex;
 	justify-content: center;
@@ -123,7 +130,7 @@ a {
 	margin: 0 10px;
 	font-size: 1.5em;
 	font-weight: 700;
-	color: #fff;
+	color: rgba(255, 255, 255, 0.75);
 }
 
 .forecastLow {
@@ -142,7 +149,11 @@ a {
 	color: #7abdfd;
 }
 
-
+@media screen and (max-width: 800px) {
+	.forecast-container {
+		flex-direction: column;
+	}
+}
 
 
 
