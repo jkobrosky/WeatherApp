@@ -5,6 +5,7 @@
 		<link rel="stylesheet" href="font/weather-icons.css" />
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="css/style.css" />
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 	</head>
 
 	<body ng-controller="weatherCtrl">
@@ -42,11 +43,82 @@
 			</div> <!-- End of 'weather-display-container' -->
 
 			<div class="forecast-container">
-				<div ng-model="day1" class="forecast-box"></div>
-				<div ng-model="day2" class="forecast-box"></div>
-				<div ng-model="day3" class="forecast-box"></div>
-				<div ng-model="day4" class="forecast-box"></div>
-				<div ng-model="day5" class="forecast-box"></div>
+
+				<div ng-model="day1" class="forecast-box">
+					<div class="forecastIcon">
+						<i class="wi {{ forecastIconD1 }}"></i>
+					</div>
+
+					<div class="forecastTemps">
+						<span class="forecastHigh">{{ forecastHighD1 }}</span>
+						<span class="forecastLow">{{ forecastLowD1 }}</span>
+					</div>
+
+					<div class="weekday">
+						<span class="dayOfWeek">{{ forecastWeekdayD1}}
+					</div>
+				</div>
+
+				<div ng-model="day2" class="forecast-box">
+					<div class="forecastIcon">
+						<i class="wi {{ forecastIconD2 }}"></i>
+					</div>
+
+					<div class="forecastTemps">
+						<span class="forecastHigh">{{ forecastHighD2 }}</span>
+						<span class="forecastLow">{{ forecastLowD2 }}</span>
+					</div>
+
+					<div class="weekday">
+						<span class="dayOfWeek">{{ forecastWeekdayD2}}
+					</div>
+				</div>
+
+				<div ng-model="day3" class="forecast-box">
+					<div class="forecastIcon">
+						<i class="wi {{ forecastIconD3 }}"></i>
+					</div>
+
+					<div class="forecastTemps">
+						<span class="forecastHigh">{{ forecastHighD3 }}</span>
+						<span class="forecastLow">{{ forecastLowD3 }}</span>
+					</div>
+
+					<div class="weekday">
+						<span class="dayOfWeek">{{ forecastWeekdayD3}}
+					</div>
+				</div>
+
+				<div ng-model="day4" class="forecast-box">
+					<div class="forecastIcon">
+						<i class="wi {{ forecastIconD4 }}"></i>
+					</div>
+
+					<div class="forecastTemps">
+						<span class="forecastHigh">{{ forecastHighD4 }}</span>
+						<span class="forecastLow">{{ forecastLowD4 }}</span>
+					</div>
+
+					<div class="weekday">
+						<span class="dayOfWeek">{{ forecastWeekdayD4}}
+					</div>
+				</div>
+
+				<div ng-model="day5" class="forecast-box">
+					<div class="forecastIcon">
+						<i class="wi {{ forecastIconD5 }}"></i>
+					</div>
+
+					<div class="forecastTemps">
+						<span class="forecastHigh">{{ forecastHighD5 }}</span>
+						<span class="forecastLow">{{ forecastLowD5 }}</span>
+					</div>
+
+					<div class="weekday">
+						<span class="dayOfWeek">{{ forecastWeekdayD5}}
+					</div>
+				</div>
+
 			</div> <!-- End of 'forecast-container' -->
 
 		</div> <!-- End of 'main-content' -->
