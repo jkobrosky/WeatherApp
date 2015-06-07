@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="weatherFinder">
+	<head>
+		<title>Weather Finder</title>
+		<link rel="stylesheet" href="font/weather-icons.css" />
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+
+	<body ng-controller="weatherCtrl">
+		<div class="main-content">
+			<div class="head-container">
+				<header class="nav-container">
+					<div class="input-container">
+						<input ng-model="location.state" class="coords" type="text" placeholder="State" />
+						<input ng-model="location.town" class="coords" type="text" 	placeholder="City" />
+					</div> <!-- End of 'input-container' -->
+
+					<div>
+						<a ng-click="getWeather(location); getForecast(location)" href='#'><i class="fa fa-arrow-right"></i></a>
+					</div>
+
+					<div class="settings-icon">
+						<a ng-click="getSettings()" href="#"><i class="fa fa-cog"></i></a>
+					</div> <!-- End of 'settings-icon' -->
+
+				</header>
+			</div> <!-- End of 'head-container' -->
+
+			<div class="weather-display-container">
+
+				<div class="weather-display">
+					<i class="wi {{ wxIcon }}"></i>
+				
+					<div class="temp-display">
+						<span ng-model="temp" class="temp">{{ temp }}</span>
+						<span ng-model="conditions" class="temp">{{ conditions }}</span>
+					</div>
+
+					<span ng-model="city" class="city">{{ city }}</span>
+				</div> <!-- End of 'weather-display' -->
+			</div> <!-- End of 'weather-display-container' -->
+
+			<div class="forecast-container">
+				<div ng-model="day1" class="forecast-box"></div>
+				<div ng-model="day2" class="forecast-box"></div>
+				<div ng-model="day3" class="forecast-box"></div>
+				<div ng-model="day4" class="forecast-box"></div>
+				<div ng-model="day5" class="forecast-box"></div>
+			</div> <!-- End of 'forecast-container' -->
+
+		</div> <!-- End of 'main-content' -->
+
+			<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+			<script src="js/app.js"></script>
+			<script src="js/weatherCtrl.js"></script>
+			<script src="js/weatherService.js"></script>
+	</body>
+</html>
