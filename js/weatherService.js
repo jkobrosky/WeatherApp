@@ -65,18 +65,10 @@ app.service('weatherService', function($http, $q) {
 		}).then(function(forecastResponse) {
 			console.log('forecast response', forecastResponse);
 			this.parsedForecast = {
-				day1: {
-					high: forecastResponse.data.forecast.simpleforecast.forecastday[0].high.fahrenheit,
-					low: forecastResponse.data.forecast.simpleforecast.forecastday[0].low.fahrenheit,
-					icon: iconSetter(forecastResponse.data.forecast.simpleforecast.forecastday[0].conditions),
-					date: {
-						month: forecastResponse.data.forecast.simpleforecast.forecastday[0].date.monthname,
-						day: forecastResponse.data.forecast.simpleforecast.forecastday[0].date.day,
-						weekday: forecastResponse.data.forecast.simpleforecast.forecastday[0].date.weekday,
-						ampm: forecastResponse.data.forecast.simpleforecast.forecastday[0].date.ampm
-					}
+				current: {
+					currentDate: forecastResponse.data.forecast.simpleforecast.forecastday[0].date.weekday + ' , ' + forecastResponse.data.forecast.simpleforecast.forecastday[0].date.monthname + forecastResponse.data.forecast.simpleforecast.forecastday[0].date.day
 				},
-				day2: {
+				day1: {
 					high: forecastResponse.data.forecast.simpleforecast.forecastday[1].high.fahrenheit,
 					low: forecastResponse.data.forecast.simpleforecast.forecastday[1].low.fahrenheit,
 					icon: iconSetter(forecastResponse.data.forecast.simpleforecast.forecastday[1].conditions),
@@ -87,7 +79,7 @@ app.service('weatherService', function($http, $q) {
 						ampm: forecastResponse.data.forecast.simpleforecast.forecastday[1].date.ampm
 					}
 				},
-				day3: {
+				day2: {
 					high: forecastResponse.data.forecast.simpleforecast.forecastday[2].high.fahrenheit,
 					low: forecastResponse.data.forecast.simpleforecast.forecastday[2].low.fahrenheit,
 					icon: iconSetter(forecastResponse.data.forecast.simpleforecast.forecastday[2].conditions),
@@ -98,7 +90,7 @@ app.service('weatherService', function($http, $q) {
 						ampm: forecastResponse.data.forecast.simpleforecast.forecastday[2].date.ampm
 					}
 				},
-				day4: {
+				day3: {
 					high: forecastResponse.data.forecast.simpleforecast.forecastday[3].high.fahrenheit,
 					low: forecastResponse.data.forecast.simpleforecast.forecastday[3].low.fahrenheit,
 					icon: iconSetter(forecastResponse.data.forecast.simpleforecast.forecastday[3].conditions),
@@ -109,7 +101,7 @@ app.service('weatherService', function($http, $q) {
 						ampm: forecastResponse.data.forecast.simpleforecast.forecastday[3].date.ampm
 					}
 				},
-				day5: {
+				day4: {
 					high: forecastResponse.data.forecast.simpleforecast.forecastday[4].high.fahrenheit,
 					low: forecastResponse.data.forecast.simpleforecast.forecastday[4].low.fahrenheit,
 					icon: iconSetter(forecastResponse.data.forecast.simpleforecast.forecastday[4].conditions),
@@ -118,6 +110,17 @@ app.service('weatherService', function($http, $q) {
 						day: forecastResponse.data.forecast.simpleforecast.forecastday[4].date.day,
 						weekday: forecastResponse.data.forecast.simpleforecast.forecastday[4].date.weekday,
 						ampm: forecastResponse.data.forecast.simpleforecast.forecastday[4].date.ampm
+					}
+				},
+				day5: {
+					high: forecastResponse.data.forecast.simpleforecast.forecastday[5].high.fahrenheit,
+					low: forecastResponse.data.forecast.simpleforecast.forecastday[5].low.fahrenheit,
+					icon: iconSetter(forecastResponse.data.forecast.simpleforecast.forecastday[5].conditions),
+					date: {
+						month: forecastResponse.data.forecast.simpleforecast.forecastday[5].date.monthname,
+						day: forecastResponse.data.forecast.simpleforecast.forecastday[5].date.day,
+						weekday: forecastResponse.data.forecast.simpleforecast.forecastday[5].date.weekday,
+						ampm: forecastResponse.data.forecast.simpleforecast.forecastday[5].date.ampm
 					}
 				}
 			};

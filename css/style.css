@@ -146,6 +146,15 @@ a {
 	margin: 10px;
 	font-size: 1.25em;
 	letter-spacing: .1em;
+	color: rgba(255, 255, 255, 0.75);
+}
+
+.currentDate {
+	display: flex;
+	justify-content: center;
+	margin-top: 70px;
+	font-size: 1.25em;
+	letter-spacing: .1em;
 	color: #7abdfd;
 }
 

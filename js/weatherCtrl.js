@@ -2,6 +2,8 @@ var app = angular.module('weatherFinder');
 
 app.controller('weatherCtrl', function($scope, weatherService) {
 	
+	$scope.isVisible = true;
+
 	$scope.getWeather = function(location) {
 		weatherService.getWeather(location).then(function(data) {
 			$scope.city = data.location;
@@ -19,6 +21,7 @@ app.controller('weatherCtrl', function($scope, weatherService) {
 	$scope.getForecast = function(location) {
 		weatherService.getForecast(location).then(function(forecastResponse) {
 			console.log('forecast from ctrl', forecastResponse);
+			$scope.currentDay = forecastResponse.current.currentDate;
 
 			$scope.forecastIconD1 = forecastResponse.day1.icon;
 			$scope.forecastIconD2 = forecastResponse.day2.icon;
@@ -47,6 +50,21 @@ app.controller('weatherCtrl', function($scope, weatherService) {
 		}, function(error) {
 			console.log(error);
 		});
+
+	};
+
+	$scope.toggleSearch = function(location) {
+		if ($scope.location === true && $scope.isVisible === true) {
+			getWeather(location);
+			getForecast(location);
+			$scope.isVisible = !$scope.isVisible;
+		} else {
+			$scope.isVisible = !$scope.isVisible;
+		}
+	};
+
+	$scope.getSettings = function() {
+		console.log('user profile goes here');
 	}
 
 });
